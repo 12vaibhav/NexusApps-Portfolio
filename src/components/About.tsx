@@ -13,8 +13,15 @@ export default function About() {
 
   return (
     <section id="about" ref={containerRef} className="py-24 bg-brand-dark relative overflow-hidden">
+      {/* Premium Background Effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 -right-1/4 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[120px]" />
+        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      </div>
+
       {/* Background Decorative Text */}
-      <div className="absolute top-10 left-10 text-[20rem] font-black text-white/[0.02] select-none pointer-events-none leading-none">
+      <div className="absolute top-0 left-10 text-[12rem] md:text-[18rem] font-black text-white/[0.04] select-none pointer-events-none leading-none tracking-tighter">
         ABOUT
       </div>
 
@@ -29,12 +36,11 @@ export default function About() {
             className="lg:col-span-5 relative"
           >
             <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl">
-              <motion.div style={{ y, scale }} className="absolute inset-0">
+              <motion.div style={{ y }} className="absolute inset-0 scale-110">
                 <img
-                  src="https://picsum.photos/seed/architect/1200/1500"
-                  alt="NexusApps Vision"
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
+                  src="/Assets/About_image.webp"
+                  alt="About NexusApps"
+                  className="w-full h-full object-cover filter drop-shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
                 />
               </motion.div>
               
@@ -42,15 +48,18 @@ export default function About() {
               <div className="absolute inset-0 bg-linear-to-t from-brand-dark/60 via-transparent to-transparent" />
             </div>
 
+            {/* Decorative Background Glow for Image */}
+            <div className="absolute -inset-10 bg-brand-primary/5 rounded-full blur-[100px] -z-10 animate-pulse pointer-events-none" />
+
             {/* Experience Badge */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="absolute -bottom-10 -right-10 glass p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-white/10 hidden md:block"
+              className="absolute -bottom-10 -right-10 bg-[#151515] p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 hidden md:block"
             >
-              <div className="text-6xl font-bold text-brand-primary mb-2 tracking-tighter">10+</div>
+              <div className="text-6xl font-bold text-brand-primary mb-2 tracking-tighter">2+</div>
               <div className="text-sm font-bold text-slate-400 uppercase tracking-[0.2em] leading-tight">
                 Years of <br /> Excellence
               </div>
@@ -87,22 +96,22 @@ export default function About() {
               </div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-6 pt-8 border-t border-white/5">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-6 pt-10 border-t border-white/5">
                 {[
-                  { label: "Projects", value: "250+" },
-                  { label: "Clients", value: "180+" },
-                  { label: "Awards", value: "15" },
-                  { label: "Lines", value: "2M+" },
+                  { label: "Delivered", value: "10+ Premium Projects" },
+                  { label: "Strategy", value: "AI-First Development" },
+                  { label: "Reliability", value: "100% On-Time Delivery" },
                 ].map((stat, idx) => (
                   <motion.div 
                     key={stat.label}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
+                    whileHover={{ y: -5 }}
                     transition={{ delay: 0.5 + (idx * 0.1) }}
-                    className="flex flex-col gap-1"
+                    className="flex flex-col gap-1 group/stat"
                   >
-                    <div className="text-3xl font-bold text-white tracking-tight">{stat.value}</div>
+                    <div className="text-2xl font-bold text-white tracking-tight group-hover/stat:text-brand-primary transition-colors duration-300">{stat.value}</div>
                     <div className="text-xs text-slate-500 font-bold uppercase tracking-widest">{stat.label}</div>
                   </motion.div>
                 ))}

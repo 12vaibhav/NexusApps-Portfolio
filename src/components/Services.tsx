@@ -49,8 +49,15 @@ const services = [
 export default function Services() {
   return (
     <section id="services" className="pt-8 pb-24 bg-brand-dark relative overflow-hidden">
+      {/* Premium Background Effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-1/4 -right-1/4 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-emerald-500/3 rounded-full blur-[120px]" />
+        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      </div>
+
       {/* Background Decorative Text */}
-      <div className="absolute top-10 right-10 text-[20rem] font-black text-white/[0.02] select-none pointer-events-none leading-none">
+      <div className="absolute top-0 right-10 text-[12rem] md:text-[18rem] font-black text-white/[0.04] select-none pointer-events-none leading-none tracking-tighter">
         SERVICES
       </div>
 
@@ -91,23 +98,25 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative"
+              className="group relative h-full"
             >
-              <div className="glass h-full p-10 rounded-[3rem] transition-all duration-500 hover:shadow-[0_0_50px_rgba(190,242,100,0.05)] border-white/5 hover:border-brand-primary/20 flex flex-col">
-                <div className={`w-16 h-16 rounded-2xl bg-linear-to-br ${service.color} flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform duration-500`}>
-                  <service.icon className={`w-8 h-8 ${service.iconColor}`} />
+              <div className="bg-[#151515]/50 backdrop-blur-3xl h-full p-10 rounded-[3rem] transition-all duration-500 hover:shadow-[0_20px_80px_rgba(0,0,0,0.4)] border border-white/5 hover:border-brand-primary/30 flex flex-col group-hover:-translate-y-2">
+                <div className={`w-16 h-16 rounded-2xl bg-linear-to-br ${service.color} flex items-center justify-center mb-8 shadow-inner group-hover:scale-110 transition-transform duration-500 relative`}>
+                  <service.icon className={`w-8 h-8 ${service.iconColor} relative z-10`} />
+                  <div className="absolute inset-0 bg-brand-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
                 
-                <h3 className="text-3xl font-bold mb-2 text-white group-hover:text-brand-primary transition-colors duration-300">
+                <h3 className="text-3xl font-bold mb-4 text-white group-hover:text-brand-primary transition-colors duration-300">
                   {service.title}
                 </h3>
                 
-                <p className="text-slate-400 text-lg leading-relaxed mb-6 flex-grow">
+                <p className="text-slate-400 text-lg leading-relaxed mb-8 flex-grow">
                   {service.description}
                 </p>
 
-                <div className="flex items-center gap-2 text-brand-primary font-bold uppercase tracking-widest text-xs opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all duration-500">
-                  Learn More <ArrowRight className="w-4 h-4" />
+                <div className="flex items-center gap-3 text-brand-primary font-bold uppercase tracking-widest text-[10px] group-hover:gap-5 transition-all duration-500">
+                  <span className="h-px w-8 bg-brand-primary/30 group-hover:w-12 transition-all" />
+                  Explore Service
                 </div>
               </div>
             </motion.div>

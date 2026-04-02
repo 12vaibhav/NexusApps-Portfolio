@@ -21,9 +21,13 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-brand-primary rounded-2xl flex items-center justify-center shadow-lg shadow-brand-primary/20 rotate-3 group-hover:rotate-0 transition-transform duration-500">
-                  <span className="text-black font-display font-black text-2xl">N</span>
+              <div className="flex items-center gap-4 group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                <div className="w-14 h-14 bg-[#151515] border border-white/10 rounded-2xl flex items-center justify-center shadow-2xl overflow-hidden group-hover:border-brand-primary/30 transition-all duration-500">
+                  <img 
+                    src="/Assets/Logo.webp" 
+                    alt="NexusApps Logo" 
+                    className="w-full h-full object-contain filter brightness-110" 
+                  />
                 </div>
                 <span className="font-display font-bold text-3xl tracking-tighter text-white">NexusApps</span>
               </div>
@@ -34,9 +38,8 @@ export default function Footer() {
 
               <div className="flex gap-4">
                 {[
-                  { icon: Twitter, href: "#" },
+                  { icon: Mail, href: "mailto:hello@nexusapps.com" },
                   { icon: Github, href: "#" },
-                  { icon: Linkedin, href: "#" },
                   { icon: Instagram, href: "#" },
                 ].map((social, i) => (
                   <motion.a
@@ -117,13 +120,13 @@ export default function Footer() {
         </div>
 
         {/* Large Background Text */}
-        <div className="mt-16 overflow-hidden select-none pointer-events-none">
+        <div className="mt-8 overflow-hidden select-none pointer-events-none">
           <motion.h1 
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[18vw] font-black text-white/[0.02] leading-none tracking-tighter text-center"
+            className="text-[15vw] font-black text-white/[0.04] leading-[0.9] tracking-tighter text-center"
           >
             NEXUSAPPS
           </motion.h1>

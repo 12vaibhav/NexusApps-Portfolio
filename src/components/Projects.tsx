@@ -108,7 +108,7 @@ export default function Projects() {
   return (
     <section id="work" className="pt-4 pb-16 bg-brand-dark relative overflow-hidden">
       {/* Background Decorative Text */}
-      <div className="absolute top-10 right-10 text-[20rem] font-black text-white/[0.02] select-none pointer-events-none leading-none">
+      <div className="absolute top-0 right-10 text-[12rem] md:text-[18rem] font-black text-white/[0.04] select-none pointer-events-none leading-none tracking-tighter">
         WORKS
       </div>
 

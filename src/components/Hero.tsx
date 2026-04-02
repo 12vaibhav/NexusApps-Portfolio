@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
-import { ArrowUpRight, Star, Plus, Sparkles } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Star, Plus, Sparkles } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 
 export default function Hero() {
@@ -12,10 +12,10 @@ export default function Hero() {
   const [textIndex, setTextIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const words = ["DIGITAL", "MODERN", "FUTURE", "UNIQUE"];
+  const words = ["Premium", "Beautiful", "Custom", "Modern"];
   const typingSpeed = 150;
   const deletingSpeed = 75;
-  const pauseDuration = 2000;
+  const pauseDuration = 1000;
 
   useEffect(() => {
     const currentWord = words[textIndex];
@@ -81,10 +81,10 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10"
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#151515] border border-white/10"
               >
                 <Sparkles className="w-4 h-4 text-brand-primary" />
-                <span className="text-xs font-bold text-brand-primary uppercase tracking-widest">Premium Digital Solutions</span>
+                <span className="text-[10px] font-bold text-brand-primary uppercase tracking-widest">Premium Digital Solutions</span>
               </motion.div>
 
               <motion.div
@@ -114,10 +114,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-6xl md:text-[7.5rem] font-bold leading-[0.85] tracking-tighter mb-6 text-white"
+              className="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tighter mb-6 text-white"
             >
-              ELEVATE <br />
-              YOUR <span className="relative inline-block">
+              Elevate Your <span className="text-brand-primary">Business</span> <br />
+              with <span className="relative inline-block">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-emerald-400">
                   {displayText}
                 </span>
@@ -126,8 +126,8 @@ export default function Hero() {
                   transition={{ duration: 0.5, repeat: Infinity, ease: "steps(2)" }}
                   className="absolute -right-2 top-0 bottom-0 w-1 bg-brand-primary"
                 />
-              </span> <br />
-              PRESENCE
+              </span> Websites <br />
+              & Web Apps
             </motion.h1>
 
             <motion.p
@@ -145,107 +145,122 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="flex flex-wrap items-center gap-6"
             >
-              <motion.button 
-                whileHover={{ scale: 1.02, boxShadow: "0 0 30px rgba(190, 242, 100, 0.3)" }}
-                whileTap={{ scale: 0.98 }}
-                className="relative group bg-brand-primary text-black px-10 py-5 rounded-2xl font-bold text-xl flex items-center gap-3 transition-all duration-300 overflow-hidden"
+              <motion.a
+                href="https://wa.me/your-number-here"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(190,242,100,0.3)" }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-brand-primary text-black px-10 py-5 rounded-2xl font-black text-xl shadow-2xl shadow-brand-primary/30 flex items-center justify-center gap-3 transition-all duration-300"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                Start a Project <ArrowUpRight className="w-6 h-6 stroke-[3]" />
-              </motion.button>
-              
-              <motion.button 
-                whileHover={{ scale: 1.02, backgroundColor: "rgba(255, 255, 255, 0.08)" }}
-                whileTap={{ scale: 0.98 }}
-                className="glass-dark border border-white/10 text-white px-10 py-5 rounded-2xl font-bold text-xl flex items-center gap-3 transition-all duration-300"
+                Let's Talk <ArrowRight className="w-6 h-6 stroke-[3]" />
+              </motion.a>
+
+              <motion.a
+                href="#work"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.05)" }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#151515] border border-white/10 text-white px-10 py-5 rounded-2xl font-bold text-xl flex items-center justify-center gap-3 transition-all duration-300"
               >
                 View Our Work <ArrowUpRight className="w-6 h-6 stroke-[3]" />
-              </motion.button>
+              </motion.a>
             </motion.div>
           </div>
 
-          {/* Right Side Testimonial Card */}
-          <div className="lg:col-span-4 relative lg:-mt-24">
-            {/* Card Glow Effect */}
-            <div className="absolute -inset-4 bg-brand-primary/20 rounded-[3rem] blur-3xl opacity-50 animate-pulse pointer-events-none" />
-            
+          {/* Right Side 3D Layered Pop-out */}
+          <div className="lg:col-span-4 relative group mt-20 lg:mt-0">
+            {/* Background Glows & Shadows */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-primary/10 rounded-full blur-[120px] pointer-events-none group-hover:bg-brand-primary/20 transition-all duration-700" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none" />
+
             <motion.div
               initial={{ opacity: 0, scale: 0.9, x: 40 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="relative z-10 max-w-[360px] ml-auto group"
+              transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="relative z-10 w-full max-w-[400px] mx-auto lg:ml-auto"
             >
-              <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] transform group-hover:-translate-y-2 transition-transform duration-500">
-                <div className="aspect-[4/3] relative bg-brand-dark overflow-hidden">
-                  <motion.img
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.8 }}
-                    src="https://picsum.photos/seed/nexus-client/800/1000"
-                    alt="Client"
-                    className="w-full h-full object-cover transition-all duration-700"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
-                </div>
-                <div className="p-8">
-                  <p className="text-xl text-slate-900 font-bold leading-tight mb-4 italic">
-                    "NexusApps helped us achieve growth we didn't think was possible"
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex flex-col">
-                      <span className="text-slate-900 font-black text-base uppercase tracking-wider">Sarah Mitchell</span>
-                      <span className="text-slate-400 text-xs font-bold uppercase tracking-widest">CEO, TechFlow</span>
-                    </div>
+              {/* The Main Backdrop Glass Slab */}
+              <div className="relative w-full aspect-[4/5] bg-white/5 border border-white/10 rounded-[4rem] backdrop-blur-3xl shadow-[0_30px_100px_rgba(0,0,0,0.5)] overflow-hidden">
+                {/* Decorative Internal Highlight */}
+                <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-linear-to-br from-brand-primary/10 to-transparent blur-3xl pointer-events-none" />
+              </div>
+
+              {/* Floating "Trusted" Badge - Now IN FRONT of the image */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, duration: 0.8 }}
+                className="absolute bottom-0 left-0 right-0 p-6 rounded-b-[4rem] bg-[#151515] border-t border-white/20 backdrop-blur-xl z-40 shadow-2xl"
+              >
+                <div className="flex items-center justify-center gap-6">
+                  <div className="w-10 h-10 bg-brand-primary/20 rounded-xl flex items-center justify-center text-brand-primary">
+                    <Sparkles className="w-5 h-5 fill-brand-primary" />
+                  </div>
+                  <div className="flex flex-col items-start gap-1">
+                    <p className="text-sm font-bold text-white tracking-tight leading-none">I'm Vaibhav,</p>
+                    <p className="text-[10px] font-medium text-slate-400 uppercase tracking-[0.2em] leading-none whitespace-nowrap">Full Stack Web Developer</p>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Explore Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.8 }}
-              className="absolute -bottom-12 -left-12 w-44 h-44 z-20 hidden md:block group/badge"
-            >
-              <div className="relative w-full h-full flex items-center justify-center">
-                {/* Outer Glow */}
-                <div className="absolute inset-0 bg-brand-primary/20 rounded-full blur-2xl group-hover/badge:bg-brand-primary/40 transition-colors duration-500" />
-                
-                {/* Rotating Text Ring */}
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 rounded-full glass-dark border border-white/10 shadow-2xl"
-                >
-                  <svg className="w-full h-full p-2" viewBox="0 0 100 100">
-                    <path
-                      id="circlePath"
-                      d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"
-                      fill="none"
-                    />
-                    <text className="text-[9px] font-black fill-brand-primary uppercase tracking-[0.45em]">
-                      <textPath xlinkHref="#circlePath">
-                        Explore Now • Explore Now • Explore Now •
-                      </textPath>
-                    </text>
-                  </svg>
-                </motion.div>
+              {/* THE CUTOUT IMAGE: Positioned to POP OUT of the glass frame */}
+              <motion.div 
+                className="absolute inset-x-0 -top-24 bottom-0 z-30 pointer-events-none select-none"
+                style={{ y: useTransform(scrollY, [0, 500], [0, -30]) }}
+              >
+                <motion.img
+                  initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1.15 }}
+                  transition={{ duration: 1.5, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  src="/Assets/Hero_image1.webp"
+                  alt="Visionary Expert"
+                  className="w-full h-full object-contain filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                />
+              </motion.div>
 
-                {/* Central Icon Button */}
-                <motion.div 
-                  whileHover={{ scale: 1.1, rotate: 90 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="relative z-10 w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(190,242,100,0.5)] cursor-pointer group-hover/badge:shadow-[0_0_50px_rgba(190,242,100,0.7)] transition-all duration-500"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="3" className="w-8 h-8">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                  </svg>
+              {/* Explore Badge - Floating elegantly in the top-right */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 1 }}
+                className="absolute -top-12 -right-12 w-32 h-32 z-40 hidden md:block group/badge"
+              >
+                <div className="relative w-full h-full flex items-center justify-center">
+                  {/* Outer Glow */}
+                  <div className="absolute inset-0 bg-brand-primary/20 rounded-full blur-2xl group-hover/badge:bg-brand-primary/40 transition-colors duration-500" />
                   
-                  {/* Internal Pulse Effect */}
-                  <div className="absolute inset-0 rounded-full border-2 border-black/20 animate-ping pointer-events-none" />
-                </motion.div>
-              </div>
+                  {/* Rotating Text Ring */}
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                    className="absolute inset-0 rounded-full bg-[#151515] border border-white/10 shadow-2xl"
+                  >
+                    <svg className="w-full h-full p-2" viewBox="0 0 100 100">
+                      <path
+                        id="circlePathHero"
+                        d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"
+                        fill="none"
+                      />
+                      <text className="text-[7px] font-black fill-brand-primary uppercase tracking-[0.45em]">
+                        <textPath xlinkHref="#circlePathHero">
+                          Explore Now • Explore Now • Explore Now •
+                        </textPath>
+                      </text>
+                    </svg>
+                  </motion.div>
+
+                  {/* Central Icon Button */}
+                  <motion.div 
+                    whileHover={{ scale: 1.1, rotate: 90 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="relative z-10 w-11 h-11 bg-brand-primary rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(190,242,100,0.5)] cursor-pointer transition-all duration-500"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="3" className="w-5 h-5">
+                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                  </motion.div>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -254,7 +269,7 @@ export default function Hero() {
       {/* Bottom Decorative Element */}
       <motion.div 
         style={{ opacity }}
-        className="absolute bottom-12 left-0 right-0 flex items-center justify-center"
+        className="absolute bottom-0 left-0 right-0 flex items-center justify-center"
       >
         <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent relative">
           <motion.div 
