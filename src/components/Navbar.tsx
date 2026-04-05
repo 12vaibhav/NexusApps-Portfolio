@@ -87,71 +87,66 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: -20 }}
+            initial={{ opacity: 0, scale: 0.95, y: -10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -20 }}
+            exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-brand-dark/98 backdrop-blur-2xl z-[60] flex flex-col p-6 md:p-8 pointer-events-auto lg:hidden"
+            className="fixed top-4 left-4 right-4 bg-brand-dark/98 backdrop-blur-2xl z-[60] flex flex-col p-5 rounded-3xl border border-white/10 shadow-2xl pointer-events-auto lg:hidden"
           >
-            <div className="flex items-center justify-between mb-12">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 flex items-center justify-center rounded-full glass border border-white/10 shadow-xl overflow-hidden">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <div className="w-9 h-9 flex items-center justify-center rounded-full glass border border-white/10 shadow-xl overflow-hidden">
                   <img src="/Assets/Logo.jpeg" alt="Logo" className="w-full h-full object-cover filter brightness-110 contrast-110" />
                 </div>
-                <span className="font-display font-bold text-xl tracking-tighter text-white">NexusApps</span>
+                <span className="font-display font-bold text-base tracking-tighter text-white">NexusApps</span>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-brand-primary hover:border-brand-primary/50 transition-all duration-300"
+                className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-brand-primary hover:border-brand-primary/50 transition-all duration-300"
               >
-                <X className="w-6 h-6" />
+                <X className="w-4 h-4" />
               </button>
             </div>
 
-            <nav className="flex flex-col gap-4">
+            <nav className="flex flex-col gap-1">
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.name}
                   href={link.href}
-                  initial={{ opacity: 0, x: 20 }}
+                  initial={{ opacity: 0, x: 10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
+                  transition={{ delay: i * 0.05 }}
                   onClick={() => setIsOpen(false)}
-                  className="text-3xl font-bold text-white tracking-tighter hover:text-brand-primary transition-all flex items-center justify-between group py-2"
+                  className="text-lg font-bold text-white tracking-tight hover:text-brand-primary transition-all flex items-center justify-between group py-2 px-3 rounded-xl hover:bg-white/5"
                 >
                   <span className="relative overflow-hidden">
                     {link.name}
                     <span className="absolute bottom-0 left-0 w-0 h-px bg-brand-primary group-hover:w-full transition-all duration-300" />
                   </span>
-                  <ArrowRight className="w-6 h-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-brand-primary" />
+                  <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-brand-primary" />
                 </motion.a>
               ))}
             </nav>
 
-            <div className="mt-auto pt-8 border-t border-white/5 flex flex-col gap-8">
-              <div className="flex flex-col gap-4">
-                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">Drop Us a Line</span>
-                <a href="mailto:vaibhavdhiman227@gmail.com" className="text-xl font-bold text-white hover:text-brand-primary transition-colors flex items-center gap-2">
-                  vaibhavdhiman227@gmail.com
-                  <ArrowUpRight className="w-4 h-4 text-brand-primary" />
-                </a>
+            <div className="mt-3 pt-3 border-t border-white/5 flex items-center justify-between">
+              <div className="flex gap-2">
+                {[
+                  { Icon: Mail, href: "mailto:vaibhavdhiman227@gmail.com", target: undefined },
+                  { Icon: Github, href: "https://github.com/12vaibhav?tab=repositories", target: "_blank" },
+                  { Icon: Instagram, href: "https://www.instagram.com/webdev_vaibhav?igsh=MXY5ZnY5a3gyNGMxcg==", target: "_blank" },
+                ].map(({ Icon, href, target }, i) => (
+                  <a
+                    key={i}
+                    href={href}
+                    target={target}
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center text-slate-400 border border-white/10 hover:border-brand-primary/50 hover:text-brand-primary transition-all duration-300"
+                  >
+                    <Icon className="w-3.5 h-3.5" />
+                  </a>
+                ))}
               </div>
-
-              <div className="flex flex-col gap-4">
-                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">Let's Connect</span>
-                <div className="flex gap-4">
-                  {[Mail, Github, Instagram].map((Icon, i) => (
-                    <a key={i} href="mailto:vaibhavdhiman227@gmail.com" className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-slate-400 border border-white/10 hover:border-brand-primary/50 hover:text-brand-primary transition-all duration-300">
-                      <Icon className="w-5 h-5" />
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              <div className="pt-6 border-t border-white/5 flex items-center justify-between opacity-50">
-                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">© 2026 NexusApps</span>
-                <div className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
-              </div>
+              <span className="text-[9px] font-bold text-slate-600 uppercase tracking-widest">© 2026 NexusApps</span>
             </div>
           </motion.div>
         )}
