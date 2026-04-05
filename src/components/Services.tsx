@@ -48,32 +48,34 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="pt-8 pb-24 bg-brand-dark relative overflow-hidden">
+    <section id="services" className="pt-8 pb-16 md:pb-24 bg-brand-dark relative overflow-hidden">
       {/* Premium Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-1/4 -right-1/4 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-emerald-500/3 rounded-full blur-[120px]" />
+        <div className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-brand-primary/10 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[120px]" />
         <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       </div>
 
       {/* Background Decorative Text */}
-      <div className="absolute top-0 right-10 text-[12rem] md:text-[18rem] font-black text-white/[0.04] select-none pointer-events-none leading-none tracking-tighter">
+      <div className="absolute top-0 right-4 md:right-10 text-[8rem] md:text-[18rem] font-black text-white/[0.04] select-none pointer-events-none leading-none tracking-tighter">
         SERVICES
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8 items-center text-center md:text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-6 items-center md:items-start"
           >
             <div className="flex items-center gap-4">
-              <div className="h-px w-12 bg-brand-primary" />
-              <span className="text-brand-primary font-bold tracking-[0.3em] uppercase text-sm">Our Expertise</span>
+              <div className="h-px w-8 md:w-12 bg-brand-primary block md:hidden" />
+              <div className="h-px w-12 bg-brand-primary hidden md:block" />
+              <span className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs md:text-sm">Our Expertise</span>
+              <div className="h-px w-8 md:w-12 bg-brand-primary block md:hidden" />
             </div>
-            <h2 className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-[0.9]">
+            <h2 className="text-4xl sm:text-5xl md:text-8xl font-bold text-white tracking-tighter leading-[1.1] md:leading-[0.9]">
               Digital <br />
               <span className="font-serif italic font-medium text-slate-500">Solutions</span>
             </h2>
@@ -84,7 +86,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="max-w-md text-xl text-slate-400 leading-relaxed"
+            className="max-w-md text-lg md:text-xl text-slate-400 leading-relaxed text-center md:text-left"
           >
             We provide a comprehensive suite of digital services designed to help your business thrive in the modern era.
           </motion.p>
@@ -100,17 +102,17 @@ export default function Services() {
               transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="group relative h-full"
             >
-              <div className="bg-[#151515]/50 backdrop-blur-3xl h-full p-10 rounded-[3rem] transition-all duration-500 hover:shadow-[0_20px_80px_rgba(0,0,0,0.4)] border border-white/5 hover:border-brand-primary/30 flex flex-col group-hover:-translate-y-2">
+              <div className="bg-[#151515]/50 backdrop-blur-3xl h-full p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] transition-all duration-500 hover:shadow-[0_20px_80px_rgba(0,0,0,0.4)] border border-white/5 hover:border-brand-primary/30 flex flex-col group-hover:-translate-y-2">
                 <div className={`w-16 h-16 rounded-2xl bg-linear-to-br ${service.color} flex items-center justify-center mb-8 shadow-inner group-hover:scale-110 transition-transform duration-500 relative`}>
                   <service.icon className={`w-8 h-8 ${service.iconColor} relative z-10`} />
                   <div className="absolute inset-0 bg-brand-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
                 
-                <h3 className="text-3xl font-bold mb-4 text-white group-hover:text-brand-primary transition-colors duration-300">
+                <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-white group-hover:text-brand-primary transition-colors duration-300">
                   {service.title}
                 </h3>
                 
-                <p className="text-slate-400 text-lg leading-relaxed mb-8 flex-grow">
+                <p className="text-slate-400 text-base md:text-lg leading-relaxed mb-6 md:mb-8 flex-grow">
                   {service.description}
                 </p>
 

@@ -42,14 +42,18 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="pt-12 pb-16 bg-brand-dark relative overflow-hidden">
+    <section id="testimonials" className="pt-12 pb-10 md:pb-16 bg-brand-dark relative overflow-hidden">
       {/* Background Decorative Text */}
-      <div className="absolute top-0 left-10 text-[12rem] md:text-[18rem] font-black text-white/[0.04] select-none pointer-events-none leading-none tracking-tighter">
+      <div className="absolute top-0 left-4 md:left-10 text-[8rem] md:text-[18rem] font-black text-white/[0.04] select-none pointer-events-none leading-none tracking-tighter">
         TRUST
       </div>
 
-      {/* Background Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[150px] -z-0" />
+      {/* Premium Background Effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-0">
+        <div className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-brand-primary/10 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[120px]" />
+        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center mb-12">
@@ -66,14 +70,14 @@ export default function Testimonials() {
               <div className="h-px w-12 bg-brand-primary" />
             </div>
 
-            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter leading-[0.9]">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tighter leading-[1.1] md:leading-[0.9]">
               What Our <br />
               <span className="font-serif italic font-medium text-slate-500">Clients</span> Say <span className="font-serif italic font-medium text-slate-500">About Us</span>.
             </h2>
           </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-nowrap md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 overflow-x-auto pb-8 md:pb-0 scroll-smooth no-scrollbar -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
@@ -81,18 +85,18 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative"
+              className="group relative flex-shrink-0 w-[85%] sm:w-[400px] md:w-auto snap-center"
             >
-              <div className="glass p-10 rounded-[3rem] h-full flex flex-col border-white/5 hover:border-brand-primary/20 transition-all duration-500 shadow-2xl">
-                <Quote className="absolute top-8 right-8 w-12 h-12 text-brand-primary/5 group-hover:text-brand-primary/10 transition-colors duration-500" />
+              <div className="glass p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] h-full flex flex-col border-white/5 hover:border-brand-primary/20 transition-all duration-500 shadow-2xl relative overflow-hidden">
+                <Quote className="absolute -top-2 -right-2 w-16 h-16 text-brand-primary/5 group-hover:text-brand-primary/10 transition-colors duration-500" />
                 
-                <div className="flex gap-1 mb-3">
+                <div className="flex gap-1 mb-4">
                   {[1, 2, 3, 4, 5].map((s) => (
                     <Star key={s} className="w-4 h-4 fill-brand-primary text-brand-primary" />
                   ))}
                 </div>
 
-                <p className="text-lg text-slate-300 mb-5 leading-relaxed italic relative z-10">
+                <p className="text-base md:text-lg text-slate-300 mb-6 leading-relaxed italic relative z-10">
                   "{t.content}"
                 </p>
 
@@ -102,13 +106,13 @@ export default function Testimonials() {
                     <img 
                       src={t.avatar} 
                       alt={t.name} 
-                      className="w-14 h-14 rounded-full border-2 border-white/10 shadow-xl relative z-10 grayscale group-hover:grayscale-0 transition-all duration-500" 
+                      className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-white/10 shadow-xl relative z-10 grayscale group-hover:grayscale-0 transition-all duration-500" 
                       referrerPolicy="no-referrer"
                     />
                   </div>
                   <div>
-                    <div className="font-bold text-white text-base tracking-tight">{t.name}</div>
-                    <div className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">{t.role}</div>
+                    <div className="font-bold text-white text-sm md:text-base tracking-tight">{t.name}</div>
+                    <div className="text-[9px] md:text-[10px] text-slate-500 font-bold uppercase tracking-widest leading-tight">{t.role}</div>
                   </div>
                 </div>
               </div>
