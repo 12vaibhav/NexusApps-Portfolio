@@ -131,8 +131,8 @@ export default function Navbar() {
             <div className="mt-auto pt-8 border-t border-white/5 flex flex-col gap-8">
               <div className="flex flex-col gap-4">
                 <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">Drop Us a Line</span>
-                <a href="mailto:hello@nexusapps.com" className="text-xl font-bold text-white hover:text-brand-primary transition-colors flex items-center gap-2">
-                  hello@nexusapps.com
+                <a href="mailto:vaibhavdhiman227@gmail.com" className="text-xl font-bold text-white hover:text-brand-primary transition-colors flex items-center gap-2">
+                  vaibhavdhiman227@gmail.com
                   <ArrowUpRight className="w-4 h-4 text-brand-primary" />
                 </a>
               </div>
@@ -141,7 +141,7 @@ export default function Navbar() {
                 <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">Let's Connect</span>
                 <div className="flex gap-4">
                   {[Mail, Github, Instagram].map((Icon, i) => (
-                    <a key={i} href="#" className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-slate-400 border border-white/10 hover:border-brand-primary/50 hover:text-brand-primary transition-all duration-300">
+                    <a key={i} href="mailto:vaibhavdhiman227@gmail.com" className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-slate-400 border border-white/10 hover:border-brand-primary/50 hover:text-brand-primary transition-all duration-300">
                       <Icon className="w-5 h-5" />
                     </a>
                   ))}
