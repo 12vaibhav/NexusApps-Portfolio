@@ -27,7 +27,7 @@ export default function Footer() {
                   <img
                     src="/Assets/Logo.webp"
                     alt="NexusApps Logo"
-                    className="w-full h-full object-cover filter brightness-110"
+                    className="w-full h-full object-cover filter brightness-110 scale-125"
                   />
                 </div>
                 <span className="font-display font-bold text-2xl md:text-3xl tracking-tighter text-white">NexusApps</span>

@@ -40,7 +40,7 @@ export default function Navbar() {
             <img
               src="/Assets/Logo.webp"
               alt="NexusApps Logo"
-              className="w-full h-full object-cover filter brightness-110 contrast-110"
+              className="w-full h-full object-cover filter brightness-110 contrast-110 scale-125"
             />
           </div>
           <span className="font-display font-bold text-lg md:text-2xl tracking-tighter text-white">NexusApps</span>
@@ -114,7 +114,7 @@ export default function Navbar() {
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <div className="w-9 h-9 flex items-center justify-center rounded-full bg-white/50 backdrop-blur-xl border border-white/10 shadow-xl overflow-hidden">
-                  <img src="/Assets/Logo.webp" alt="Logo" className="w-full h-full object-cover filter brightness-110 contrast-110" />
+                  <img src="/Assets/Logo.webp" alt="Logo" className="w-full h-full object-cover filter brightness-110 contrast-110 scale-125" />
                 </div>
                 <span className="font-display font-bold text-base tracking-tighter text-white">NexusApps</span>
               </div>
