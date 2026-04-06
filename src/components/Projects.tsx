@@ -9,7 +9,7 @@ const projects = [
     client: "E-commerce Platform With Dashboard",
     image: "/Assets/Projects/Echokart.jpeg",
     index: "01",
-    link: "https://echo-kart-git-main-vaibhav-dhimans-projects-b6e5dba6.vercel.app/"
+    link: "https://echo-kart.vercel.app/"
   },
   {
     title: "Chatlayer",
