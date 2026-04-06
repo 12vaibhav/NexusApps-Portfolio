@@ -23,7 +23,7 @@ export default function Footer() {
               className="flex flex-col items-center text-center lg:items-start lg:text-left"
             >
               <div className="flex items-center gap-4 group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full glass border border-white/10 shadow-2xl overflow-hidden group-hover:border-brand-primary/30 group-hover:bg-white/5 group-hover:scale-105 transition-all duration-500">
+                <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-white/50 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden group-hover:border-brand-primary/30 group-hover:bg-white/60 group-hover:scale-105 transition-all duration-500">
                   <img
                     src="/Assets/Logo.webp"
                     alt="NexusApps Logo"

@@ -36,7 +36,7 @@ export default function Navbar() {
           onClick={() => window.location.reload()}
           className="flex items-center gap-3 cursor-pointer group"
         >
-          <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full glass border border-white/10 shadow-xl group-hover:scale-105 group-hover:bg-white/10 transition-all duration-300 overflow-hidden">
+          <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/50 backdrop-blur-xl border border-white/10 shadow-xl group-hover:scale-105 group-hover:bg-white/60 transition-all duration-300 overflow-hidden">
             <img
               src="/Assets/Logo.webp"
               alt="NexusApps Logo"
@@ -113,7 +113,7 @@ export default function Navbar() {
           >
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
-                <div className="w-9 h-9 flex items-center justify-center rounded-full glass border border-white/10 shadow-xl overflow-hidden">
+                <div className="w-9 h-9 flex items-center justify-center rounded-full bg-white/50 backdrop-blur-xl border border-white/10 shadow-xl overflow-hidden">
                   <img src="/Assets/Logo.webp" alt="Logo" className="w-full h-full object-cover filter brightness-110 contrast-110" />
                 </div>
                 <span className="font-display font-bold text-base tracking-tighter text-white">NexusApps</span>
