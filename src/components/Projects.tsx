@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "motion/react";
-import { ArrowUpRight, Plus } from "lucide-react";
+import { ArrowUpRight, Plus, ExternalLink } from "lucide-react";
 import { useRef } from "react";
 
 const projects = [
@@ -8,49 +8,56 @@ const projects = [
     category: "Full Stack Development",
     client: "E-commerce Platform With Dashboard",
     image: "/Assets/Projects/Echokart.jpeg",
-    index: "01"
+    index: "01",
+    link: "https://echo-kart-git-main-vaibhav-dhimans-projects-b6e5dba6.vercel.app/"
   },
   {
     title: "Chatlayer",
     category: "AI/SaaS Development",
     client: "Customizable AI chatbot Builder",
     image: "/Assets/Projects/ChatLayer.jpeg",
-    index: "02"
+    index: "02",
+    link: "https://chat-layer.vercel.app/"
   },
   {
     title: "Lumina Vision",
     category: "AI Experience",
     client: "Reimagine Space With AI",
     image: "/Assets/Projects/LuminaVision.jpeg",
-    index: "03"
+    index: "03",
+    link: "https://lumina-vision-app.vercel.app/"
   },
   {
     title: "Ghar Ka Swad",
     category: "Web Development",
     client: "Restaurant Website With Table Booking",
     image: "/Assets/Projects/GharKaSwad.jpeg",
-    index: "04"
+    index: "04",
+    link: "https://swad-ka-ghar.vercel.app/"
   },
   {
     title: "Ethnic Fusion",
     category: "Web Design & Development",
     client: "Fashion Ecommerce Store",
     image: "/Assets/Projects/EthnicFusion.png",
-    index: "05"
+    index: "05",
+    link: "https://ethnic-fusion.vercel.app/"
   },
   {
     title: "Love Loom Lens",
     category: "Web Design & Development",
     client: "Photography Studio Website",
     image: "/Assets/Projects/Loveloomlens.jpeg",
-    index: "06"
+    index: "06",
+    link: "https://love-loom-lens.vercel.app/"
   },
   {
     title: "The Heirloom Editorial",
     category: "Web Design & Development",
     client: "Event Planning & Manage. Company",
     image: "/Assets/Projects/EventManage.jpeg",
-    index: "07"
+    index: "07",
+    link: "https://event-planning-site.vercel.app/"
   },
 ];
 
@@ -68,6 +75,11 @@ function ProjectCard({ project, index }: ProjectCardProps) {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [-50, 50]);
+
+  const handleLinkClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    window.open(project.link, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <motion.div
@@ -105,6 +117,29 @@ function ProjectCard({ project, index }: ProjectCardProps) {
         <div className="absolute top-8 left-8 w-12 h-12 rounded-full glass flex items-center justify-center text-white font-display font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           {project.index}
         </div>
+
+        {/* Glass Launch Button */}
+        <motion.button
+          onClick={handleLinkClick}
+          whileHover={{
+            scale: 1.1,
+            boxShadow: "0 0 28px rgba(190,242,100,0.45)",
+          }}
+          whileTap={{ scale: 0.93 }}
+          title={`Open ${project.title}`}
+          className="absolute top-4 right-4 md:top-5 md:right-5 z-20 w-11 h-11 md:w-13 md:h-13 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300"
+          style={{
+            background: "rgba(255,255,255,0.12)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+            border: "1px solid rgba(255,255,255,0.25)",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.15)",
+            width: "2.75rem",
+            height: "2.75rem",
+          }}
+        >
+          <ExternalLink className="w-4 h-4 md:w-5 md:h-5 text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]" />
+        </motion.button>
       </div>
 
       {/* Project Info */}
