@@ -25,9 +25,9 @@ export default function Footer() {
               <div className="flex items-center gap-4 group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full glass border border-white/10 shadow-2xl overflow-hidden group-hover:border-brand-primary/30 group-hover:bg-white/5 group-hover:scale-105 transition-all duration-500">
                   <img
-                    src="/Assets/Logo.webp"
+                    src="Assets/Logo.webp"
                     alt="NexusApps Logo"
-                    className="w-full h-full object-cover filter brightness-110"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <span className="font-display font-bold text-2xl md:text-3xl tracking-tighter text-white">NexusApps</span>
