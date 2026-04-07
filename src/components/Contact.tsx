@@ -117,7 +117,7 @@ export default function Contact() {
                   <div className="space-y-3">
                     <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Full Name</label>
                     <input
-                      name="user_name"
+                      name="from_name"
                       type="text"
                       required
                       className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 md:px-8 py-3.5 md:py-5 focus:outline-none focus:border-brand-primary/50 focus:bg-white/10 transition-all text-white font-bold placeholder:text-slate-600 text-sm md:text-base"
@@ -127,7 +127,7 @@ export default function Contact() {
                   <div className="space-y-3">
                     <label className="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-widest ml-0.5">Email Address</label>
                     <input
-                      name="user_email"
+                      name="from_email"
                       type="email"
                       required
                       className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 md:px-8 py-3.5 md:py-5 focus:outline-none focus:border-brand-primary/50 focus:bg-white/10 transition-all text-white font-bold placeholder:text-slate-600 text-sm md:text-base"
