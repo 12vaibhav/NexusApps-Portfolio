@@ -87,7 +87,7 @@ const projects: Project[] = [
     image: "/Assets/Projects/ShineJewels.png",
     index: "09",
     link: "https://shine-jewels.vercel.app/",
-    scale: 0.9,
+    scale: 0.95,
     bgColor: "#1A0F0E"
   },
 ];
