@@ -2,7 +2,17 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowUpRight, Plus, ExternalLink } from "lucide-react";
 import { useRef } from "react";
 
-const projects = [
+interface Project {
+  title: string;
+  category: string;
+  client: string;
+  image: string;
+  index: string;
+  link: string;
+  scale?: number;
+}
+
+const projects: Project[] = [
   {
     title: "Echokart",
     category: "Full Stack Development",
@@ -65,7 +75,8 @@ const projects = [
     client: "Hyperlocal Fashion Marketplace",
     image: "/Assets/Projects/SarojiniAtDoor.png",
     index: "08",
-    link: "https://sarojini-at-door.vercel.app/"
+    link: "https://sarojini-at-door.vercel.app/",
+    scale: 0.9
   },
   {
     title: "Shine Jewels",
@@ -73,12 +84,13 @@ const projects = [
     client: "Luxury Jewelry E-store",
     image: "/Assets/Projects/ShineJewels.png",
     index: "09",
-    link: "https://shine-jewels.vercel.app/"
+    link: "https://shine-jewels.vercel.app/",
+    scale: 0.9
   },
 ];
 
 interface ProjectCardProps {
-  project: typeof projects[0];
+  project: Project;
   index: number;
   key?: string | number;
 }
@@ -111,7 +123,10 @@ function ProjectCard({ project, index }: ProjectCardProps) {
     >
       {/* Image Container */}
       <div className="relative aspect-[4/3] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden bg-slate-900 mb-6 md:mb-8 border border-white/5 group-hover:border-brand-primary/20 transition-colors duration-500">
-        <motion.div style={{ y }} className="absolute inset-0 scale-100">
+        <motion.div 
+          style={{ y, scale: project.scale || 1 }} 
+          className="absolute inset-0"
+        >
           <img
             src={project.image}
             alt={project.title}
