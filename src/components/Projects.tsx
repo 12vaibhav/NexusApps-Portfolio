@@ -10,6 +10,7 @@ interface Project {
   index: string;
   link: string;
   scale?: number;
+  bgColor?: string;
 }
 
 const projects: Project[] = [
@@ -76,7 +77,8 @@ const projects: Project[] = [
     image: "/Assets/Projects/SarojiniAtDoor.png",
     index: "08",
     link: "https://sarojini-at-door.vercel.app/",
-    scale: 0.9
+    scale: 0.9,
+    bgColor: "#000000"
   },
   {
     title: "Shine Jewels",
@@ -85,7 +87,8 @@ const projects: Project[] = [
     image: "/Assets/Projects/ShineJewels.png",
     index: "09",
     link: "https://shine-jewels.vercel.app/",
-    scale: 0.9
+    scale: 0.9,
+    bgColor: "#1A0F0E"
   },
 ];
 
@@ -122,7 +125,10 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       onClick={handleLinkClick}
     >
       {/* Image Container */}
-      <div className="relative aspect-[4/3] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden bg-slate-900 mb-6 md:mb-8 border border-white/5 group-hover:border-brand-primary/20 transition-colors duration-500">
+      <div 
+        className="relative aspect-[4/3] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden mb-6 md:mb-8 border border-white/5 group-hover:border-brand-primary/20 transition-colors duration-500"
+        style={{ backgroundColor: project.bgColor || "#0f172a" }} // Fallback to slate-900 equivalent
+      >
         <motion.div 
           style={{ y, scale: project.scale || 1 }} 
           className="absolute inset-0"
