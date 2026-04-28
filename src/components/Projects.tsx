@@ -59,6 +59,22 @@ const projects = [
     index: "07",
     link: "https://event-planning-site.vercel.app/"
   },
+  {
+    title: "Sarojini At Door",
+    category: "Web Design & Development",
+    client: "Hyperlocal Fashion Marketplace",
+    image: "/Assets/Projects/SarojiniAtDoor.png",
+    index: "08",
+    link: "https://sarojini-at-door.vercel.app/"
+  },
+  {
+    title: "Shine Jewels",
+    category: "Web Design & Development",
+    client: "Luxury Jewelry E-store",
+    image: "/Assets/Projects/ShineJewels.png",
+    index: "09",
+    link: "https://shine-jewels.vercel.app/"
+  },
 ];
 
 interface ProjectCardProps {
@@ -78,7 +94,9 @@ function ProjectCard({ project, index }: ProjectCardProps) {
 
   const handleLinkClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    window.open(project.link, "_blank", "noopener,noreferrer");
+    if (project.link && project.link !== "#") {
+      window.open(project.link, "_blank", "noopener,noreferrer");
+    }
   };
 
   return (
@@ -88,7 +106,8 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 1, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-      className="group"
+      className="group cursor-pointer"
+      onClick={handleLinkClick}
     >
       {/* Image Container */}
       <div className="relative aspect-[4/3] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden bg-slate-900 mb-6 md:mb-8 border border-white/5 group-hover:border-brand-primary/20 transition-colors duration-500">

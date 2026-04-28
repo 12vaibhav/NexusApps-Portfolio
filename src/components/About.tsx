@@ -43,7 +43,7 @@ export default function About() {
                   className="w-full h-full object-cover filter drop-shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
                 />
               </div>
-              
+
               {/* Overlay Gradient */}
               <div className="absolute inset-0 bg-linear-to-t from-brand-dark/60 via-transparent to-transparent" />
             </div>
@@ -52,7 +52,7 @@ export default function About() {
             <div className="absolute -inset-10 bg-brand-primary/5 rounded-full blur-[100px] -z-10 animate-pulse pointer-events-none" />
 
             {/* Experience Badge */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -103,7 +103,7 @@ export default function About() {
                   { label: "Strategy", value: "AI-First Development" },
                   { label: "Reliability", value: "100% On-Time Delivery" },
                 ].map((stat, idx) => (
-                  <motion.div 
+                  <motion.div
                     key={stat.label}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
