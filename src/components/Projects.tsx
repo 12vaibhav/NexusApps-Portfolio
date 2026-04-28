@@ -111,7 +111,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
     >
       {/* Image Container */}
       <div className="relative aspect-[4/3] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden bg-slate-900 mb-6 md:mb-8 border border-white/5 group-hover:border-brand-primary/20 transition-colors duration-500">
-        <motion.div style={{ y }} className="absolute inset-0 scale-110">
+        <motion.div style={{ y }} className="absolute inset-0 scale-100">
           <img
             src={project.image}
             alt={project.title}
